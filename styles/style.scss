@@ -1,0 +1,1504 @@
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&display=swap');
+
+* {
+    font-family: Phudu;
+    font-weight: 500;
+    box-sizing: border-box !important;
+    padding: 0;
+    margin: 0;
+    transform-style: preserve-3d;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+.profile {
+    width: 250px;
+    height: 250px;
+    position: fixed;
+    z-index: 1;
+    bottom: 40px;
+    right: 50px;
+
+    &:hover>.outline {
+        opacity: 0;
+        visibility: 0;
+    }
+
+    &:hover>div>.icons>a {
+        offset-distance: 92%;
+    }
+
+    >.outline {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        border-top: 5px solid black;
+        border-bottom: 5px solid white;
+        animation: border-spin 5s infinite linear;
+        transition: .5s;
+        // transform-origin: 50% 50%;
+
+        @keyframes border-spin {
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    }
+
+
+    >div {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        border-radius: 50%;
+        animation-fill-mode: backwards;
+        animation-name: move .5s;
+
+        >.icons {
+            display: flex;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 35px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+
+            >a {
+                color: snow;
+                position: absolute;
+                offset-rotate: 360deg;
+                offset-distance: 0%;
+                transition: .5s;
+
+                &:nth-of-type(1) {
+                    offset-path: path("M62.78,125H3.7c0,0-5.61-84.39,83.8-116.13");
+                    transition-delay: 1.5s;
+                }
+
+                &:nth-of-type(2) {
+                    offset-path: path("M102.43,125H3.7c0,0-5.61-84.39,83.8-116.13 c0, 0, 17.15-6.61, 40.89-5.83");
+                    transition-delay: 1s;
+                }
+
+                &:nth-of-type(3) {
+                    offset-path: path("M149.65,125H3.7c0,0-5.61-84.39,83.8-116.13 c0,0,17.15-6.61,40.89-5.83c0,0,20.83,0.11,40.87,8.21");
+                    transition-delay: .5s;
+                }
+
+                &:nth-of-type(4) {
+                    offset-path: path("M188.78,125H3.7c0,0-5.61-84.39,83.8-116.13 c0,0,17.15-6.61,40.89-5.83c0,0,20.83,0.11,40.87,8.21c0,0,19.94,7.13,36.98,22.56");
+                }
+
+            }
+        }
+
+        >figure {
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            left: 0;
+            overflow: hidden;
+
+            >img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &:nth-of-type(1) {
+                top: 0%;
+                clip-path: circle(50.0% at 50% 100%);
+            }
+
+            &:nth-of-type(2) {
+                top: 50%;
+                clip-path: circle(50.0% at 50% 0);
+            }
+        }
+
+        >h3 {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            color: white;
+            font-weight: normal;
+            text-shadow: -2px 0px 0px black,
+                2px 0px 0px black,
+                0px -2px 0px black,
+                0px 2px 0px black,;
+        }
+    }
+}
+
+nav {
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 79px;
+    border-radius: 55px;
+    overflow-y: hidden;
+    z-index: 1;
+    background-color: white;
+    transition: .4s;
+
+    >div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 15px;
+
+        &:nth-of-type(1) {
+            height: 80px;
+            align-items: center;
+            border-bottom: 1px solid black;
+
+            >h3 {
+                font-size: 40px;
+                font-weight: bolder;
+            }
+
+            >#trigger {
+                display: flex;
+                color: snow;
+                font-size: 25px;
+                padding: 10px 20px;
+                border-radius: 50px;
+                background-color: #2870D0;
+                cursor: pointer;
+            }
+        }
+
+        &:nth-of-type(2) {
+            height: 240px;
+
+            >ul {
+                list-style: none;
+                width: 100%;
+                height: 100%;
+                padding: 15px 5px;
+
+                >li {
+                    font-size: 18px;
+                    padding: 3px 0;
+
+                    &:last-of-type>a {
+                        color: orangered;
+                    }
+
+                    >a {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.full {
+    height: 320px;
+    border-radius: 10px;
+}
+
+main {
+    perspective: 1000px;
+    overflow-x: hidden;
+    height: 100vh;
+
+    >.row {
+        >.head {
+            min-height: 100vh;
+            background-color: rgb(5, 20, 20);
+
+            >.row {
+
+                >.title {
+
+                    // height: 200px;
+                    >.row {
+                        >.title-text {
+
+                            >h1 {
+                                text-shadow: -7px 7px 1px rgba(0, 0, 0, 0.477);
+                            }
+                        }
+
+                        >.btnGroup {
+
+                            >a {
+                                width: 200px;
+                                box-shadow: -5px 5px 1px rgba(0, 0, 0, 0.477);
+                            }
+                        }
+                    }
+                }
+            }
+
+            >.disk {
+                left: 50%;
+                bottom: 0;
+                transform: translate(-50%, 50%);
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                background-color: white;
+                animation: revolve 10s .4s infinite linear;
+                z-index: 3;
+                cursor: pointer;
+
+                &:hover {
+                    animation-duration: .4s;
+                }
+
+                >div {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+
+                    >div {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+
+                        >p {
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                            >i {
+                                display: flex;
+                                position: absolute;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                font-size: 20px;
+                            }
+                        }
+
+
+                        &:nth-of-type(2) {
+                            transform: translate(-50%, -50%) rotate(90deg);
+                        }
+
+                        &:nth-of-type(3) {
+                            transform: translate(-50%, -50%) rotate(180deg);
+                        }
+
+                        &:nth-of-type(4) {
+                            transform: translate(-50%, -50%) rotate(270deg);
+                        }
+                    }
+                }
+
+                >.spin2 {
+                    transform: translate(-50%, -50%) rotate(45deg);
+
+                }
+            }
+
+            @keyframes revolve {
+                to {
+                    transform: translate(-50%, 50%) rotate(360deg);
+                }
+            }
+
+            >.backgrounds {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: -2;
+                background-color: #698cb9;
+
+                >.background {
+                    position: absolute;
+                    width: 310%;
+                    height: 250px;
+                    background-repeat: no-repeat;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-position: 0 40px;
+                    animation: waves ease-out infinite alternate;
+
+
+                    &:nth-of-type(1) {
+                        // background-color: red;
+                        background-image: url(../img/wave4.png);
+                        left: 60%;
+                        bottom: 150px;
+                        background-size: 100% 100%;
+                        animation-duration: 20s;
+                    }
+
+                    &:nth-of-type(2) {
+                        background-image: url(../img/wave3.png);
+                        bottom: 100px;
+                        left: 45%;
+                        background-size: 140% 100%;
+                        animation-duration: 18s;
+                    }
+
+                    &:nth-of-type(3) {
+                        background-image: url(../img/wave2.png);
+                        left: 60%;
+                        bottom: 50px;
+                        background-size: 100% 100%;
+                        animation-duration: 21s;
+                    }
+
+                    &:nth-of-type(4) {
+                        background-image: url(../img/wave.png);
+                        background-size: 150% 100%;
+                        animation-name: none;
+                    }
+
+                    @keyframes waves {
+                        0% {
+                            transform: translateX(-50%);
+                        }
+
+                        100% {
+                            transform: translateX(-50%) translateY(-50px);
+                        }
+                    }
+                }
+            }
+        }
+
+        >#section1 {
+            min-height: 100vh;
+            width: 100%;
+            // backdrop-filter: brightness(.5);
+            background-color: #f1faee;
+            background-image: url(../img/pattern.png);
+            background-size: 300px;
+            position: relative;
+            z-index: -1;
+
+            >.row {
+
+                >div {
+                    >h3 {
+                        position: relative;
+                        text-align: center;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 45px;
+                        width: 100%;
+                        color: #70a288;
+                        text-shadow: 2px 0px 2px black,
+                            0px 2px 2px black,
+                            -2px 0px 2px black,
+                            0px -2px 2px black;
+
+                        &::after {
+                            content: "it's important for us";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            color: #006494;
+                            left: 0;
+                            top: 0;
+                            pointer-events: none;
+                            animation: text-dancing 2s infinite alternate ease-in;
+                            opacity: .5;
+                        }
+
+                        @keyframes text-dancing {
+                            0% {
+                                clip-path: polygon(57% 53%, 66% 56%, 79% 38%, 83% 78%, 72% 88%, 50% 76%, 35% 88%, 17% 67%, 19% 39%, 38% 48%);
+                            }
+
+                            50% {
+                                clip-path: polygon(51% 31%, 67% 26%, 79% 66%, 72% 86%, 63% 73%, 50% 71%, 36% 75%, 11% 77%, 24% 33%, 41% 32%);
+                            }
+
+                            100% {
+                                clip-path: polygon(49% 59%, 56% 56%, 63% 63%, 61% 81%, 58% 86%, 48% 83%, 36% 77%, 32% 73%, 34% 58%, 42% 65%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            >.slider {
+                // overflow-x: hidden;
+                transform-style: preserve-3d;
+
+                >.row {
+                    transform-style: preserve-3d;
+
+                    >div {
+                        transform-style: preserve-3d;
+                        height: 550px;
+                        margin-left: 20px;
+
+                        >figure {
+                            border-radius: 20px;
+                            box-sizing: border-box !important;
+                            box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.472);
+                            width: calc(100% - 20px);
+                            height: 550px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            padding: 0 20px;
+                            animation: 40s infinite linear;
+                            transform-style: preserve-3d;
+                            overflow: hidden;
+                            display: flex;
+                            justify-content: center;
+                            cursor: pointer;
+
+                            >* {
+                                position: absolute;
+                            }
+
+                            >.info {
+                                width: 100%;
+                                height: 100%;
+                                padding: 10px 20px;
+                                font-size: 50px;
+                                color: snow;
+                                font-weight: bolder !important;
+                                transition: .5s;
+                                display: flex;
+                                top: 50%;
+
+                                >* {
+                                    width: 100%;
+                                }
+
+                                >.captions {
+                                    position: absolute;
+                                    bottom: 52%;
+                                    transition: .5s;
+                                    height: 100%;
+                                    width: calc(100% - 40px);
+                                    // margin-bottom: 100px;
+
+
+                                    >.text {
+                                        bottom: 0;
+                                        position: absolute;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: end;
+                                        width: 100%;
+                                        margin-top: 10px;
+                                        margin-bottom: 10px;
+                                        transition: .5s;
+
+                                        >i {
+                                            font-size: 70px;
+                                            text-shadow: 4px 4px 5px black;
+                                            margin-bottom: 20px;
+                                        }
+
+                                        >figcaption {
+                                            text-shadow: -5px 5px 0 rgb(10, 16, 16);
+                                            line-height: 45px;
+                                            cursor: text;
+                                        }
+                                    }
+                                }
+
+                                >.buttons {
+                                    display: flex;
+                                    height: 10%;
+                                    position: absolute;
+                                    bottom: 5%;
+                                    width: calc(100% - 40px);
+
+                                    >a {
+                                        width: 180px;
+                                        display: inline-block;
+                                    }
+                                }
+                            }
+
+                            &:hover>.info {
+                                top: 2%;
+                            }
+
+                            &:hover>.info>.captions {
+                                bottom: 2%;
+                            }
+
+                            &:hover>.info>.captions>.text {
+                                bottom: 100%;
+                                transform: translateY(110%);
+                            }
+
+                            >img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            &:nth-of-type(1) {
+                                left: -300%;
+                                z-index: 5;
+                                animation-name: slider1;
+                            }
+
+                            &:nth-of-type(2) {
+                                left: -200%;
+                                z-index: 5;
+                                animation-name: slider2;
+                            }
+
+                            &:nth-of-type(3) {
+                                left: -100%;
+                                z-index: 5;
+                                animation-name: slider3;
+                            }
+
+                            &:nth-of-type(4) {
+                                left: 0;
+                                z-index: 5;
+                                animation-name: slider4;
+                                // transform: translateY(-50%) translateZ(40px) rotateY(10deg);
+                            }
+
+                            &:nth-of-type(5) {
+                                left: 100%;
+                                animation-name: slider5;
+                            }
+
+                            &:nth-of-type(6) {
+                                left: 200%;
+                                animation-name: slider6;
+                            }
+
+                            &:nth-of-type(7) {
+                                left: 300%;
+                                animation-name: slider7;
+                            }
+
+                            &:nth-of-type(8) {
+                                left: 400%;
+                                animation-name: slider8;
+                            }
+
+                            @keyframes slider1 {
+                                0% {
+                                    left: -300%;
+                                }
+
+                                10% {
+                                    left: -300%;
+                                }
+
+                                14% {
+                                    left: -200%;
+                                }
+
+                                22% {
+                                    left: -200%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                26% {
+                                    transform-origin: right;
+                                    left: -100%;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                34% {
+                                    transform-origin: right;
+                                    left: -100%;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                38% {
+                                    transform-origin: right;
+                                    left: 0;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                46% {
+                                    transform-origin: left;
+                                    left: 0;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                50% {
+                                    transform-origin: left;
+                                    left: 100%;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                58% {
+                                    transform-origin: left;
+                                    left: 100%;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                62% {
+                                    left: 200%;
+                                    transform: translateY(-50%) translateZ(0) rotateY(0);
+                                }
+
+                                70% {
+                                    left: 200%;
+                                }
+
+                                74% {
+                                    left: 300%;
+                                }
+
+                                82% {
+                                    left: 300%;
+                                }
+
+                                86% {
+                                    left: 400%;
+                                }
+
+                                94% {
+                                    left: 400%;
+                                }
+
+                                98% {
+                                    left: 500%;
+                                }
+
+                                98.00000001% {
+                                    left: -300%;
+                                }
+
+                            }
+
+                            @keyframes slider2 {
+                                0% {
+                                    left: -200%;
+                                }
+
+                                10% {
+                                    left: -200%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                14% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                22% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                26% {
+                                    left: 0;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                34% {
+                                    left: 0;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                38% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                46% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                50% {
+                                    left: 200%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                58% {
+                                    left: 200%;
+                                }
+
+                                62% {
+                                    left: 300%;
+                                }
+
+                                70% {
+                                    left: 300%;
+                                }
+
+                                74% {
+                                    left: 400%;
+                                }
+
+                                82% {
+                                    left: 400%;
+                                }
+
+                                86% {
+                                    left: 500%;
+                                }
+
+                                86.0000001% {
+                                    left: -300%;
+                                }
+
+                                94% {
+                                    left: -300%;
+                                }
+
+                                98% {
+                                    left: -200%;
+                                }
+                            }
+
+                            @keyframes slider3 {
+                                0% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                10% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                14% {
+                                    left: 0;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                22% {
+                                    left: 0;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                26% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                34% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                38% {
+                                    left: 200%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                46% {
+                                    left: 200%;
+                                }
+
+                                50% {
+                                    left: 300%;
+                                }
+
+                                58% {
+                                    left: 300%;
+                                }
+
+                                62% {
+                                    left: 400%;
+                                }
+
+                                70% {
+                                    left: 400%;
+                                }
+
+                                74% {
+                                    left: 500%;
+                                }
+
+                                74.000000001% {
+                                    left: -300%;
+                                }
+
+                                82% {
+                                    left: -300%;
+                                }
+
+                                86% {
+                                    left: -200%;
+                                }
+
+                                94% {
+                                    left: -200%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                98% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                100% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                            }
+
+                            @keyframes slider4 {
+                                0% {
+                                    left: 0;
+                                }
+
+                                10% {
+                                    left: 0;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                14% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                22% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                26% {
+                                    left: 200%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                34% {
+                                    left: 200%;
+                                }
+
+                                38% {
+                                    left: 300%;
+                                }
+
+                                46% {
+                                    left: 300%;
+                                }
+
+                                50% {
+                                    left: 400%;
+                                }
+
+                                58% {
+                                    left: 400%;
+                                }
+
+                                62% {
+                                    left: 500%;
+                                }
+
+                                62.00000001% {
+                                    left: -300%;
+                                }
+
+                                70% {
+                                    left: -300%;
+                                }
+
+                                74% {
+                                    left: -200%;
+                                }
+
+                                82% {
+                                    left: -200%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                86% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                94% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                98% {
+                                    left: 0;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                            }
+
+                            @keyframes slider5 {
+                                0% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                10% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                14% {
+                                    left: 200%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                22% {
+                                    left: 200%;
+                                }
+
+                                26% {
+                                    left: 300%;
+                                }
+
+                                34% {
+                                    left: 300%;
+                                }
+
+                                38% {
+                                    left: 400%;
+                                }
+
+                                46% {
+                                    left: 400%;
+                                }
+
+                                50% {
+                                    left: 500%;
+                                }
+
+                                50.0000000001% {
+                                    left: -300%;
+                                }
+
+                                58% {
+                                    left: -300%;
+                                }
+
+                                62% {
+                                    left: -200%;
+                                }
+
+                                70% {
+                                    left: -200%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                74% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                82% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                86% {
+                                    left: 0;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                94% {
+                                    left: 0;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                98% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                100% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+                            }
+
+                            @keyframes slider6 {
+                                0% {
+                                    left: 200%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                10% {
+                                    left: 200%;
+                                }
+
+                                14% {
+                                    left: 300%;
+                                }
+
+                                22% {
+                                    left: 300%;
+                                }
+
+                                26% {
+                                    left: 400%;
+                                }
+
+                                34% {
+                                    left: 400%;
+                                }
+
+                                38% {
+                                    left: 500%;
+                                }
+
+                                38.00000000001% {
+                                    left: -300%;
+                                }
+
+                                46% {
+                                    left: -300%;
+                                }
+
+                                50% {
+                                    left: -200%;
+                                }
+
+                                58% {
+                                    left: -200%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                62% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                70% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                74% {
+                                    left: 0;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+
+                                82% {
+                                    left: 0;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                86% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                94% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                98% {
+                                    left: 200%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                            }
+
+                            @keyframes slider7 {
+                                0% {
+                                    left: 300%;
+                                }
+
+                                10% {
+                                    left: 300%;
+                                }
+
+                                14% {
+                                    left: 400%;
+                                }
+
+                                22% {
+                                    left: 400%;
+                                }
+
+                                26% {
+                                    left: 500%;
+                                }
+
+                                26.00000001% {
+                                    left: -300%;
+                                }
+
+                                34% {
+                                    left: -300%;
+                                }
+
+                                38% {
+                                    left: -200%;
+                                }
+
+                                46% {
+                                    left: -200%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                50% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                58% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                62% {
+                                    left: 0;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                70% {
+                                    left: 0;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                74% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                82% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                86% {
+                                    left: 200%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                94% {
+                                    left: 200%;
+                                }
+
+                                98% {
+                                    left: 300%;
+                                }
+
+                            }
+
+                            @keyframes slider8 {
+                                0% {
+                                    left: 400%;
+                                }
+
+                                10% {
+                                    left: 400%;
+                                }
+
+                                14% {
+                                    left: 500%;
+                                }
+
+                                14.000000001% {
+                                    left: -300%;
+                                }
+
+                                22% {
+                                    left: -300%;
+                                }
+
+                                26% {
+                                    left: -200%;
+                                }
+
+                                34% {
+                                    left: -200%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                38% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                46% {
+                                    left: -100%;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(5deg);
+                                }
+
+                                50% {
+                                    left: 0;
+                                    transform-origin: right;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                58% {
+                                    left: 0;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                62% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                70% {
+                                    left: 100%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(-5deg);
+                                }
+
+                                74% {
+                                    left: 200%;
+                                    transform-origin: left;
+                                    transform: translateY(-50%) rotateY(0);
+                                }
+
+                                82% {
+                                    left: 200%;
+                                }
+
+                                86% {
+                                    left: 300%;
+                                }
+
+                                94% {
+                                    left: 300%;
+                                }
+
+                                98% {
+                                    left: 400%;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #section2 {
+            min-height: 100vh;
+            background-image: url(../img/pattern2.png);
+            background-size: 500px;
+            background-color: #005f73;
+
+            >.row {
+                border-bottom: 2px solid snow;
+
+                >figure {
+                    // aspect-ratio: 1;
+
+                    >img {
+                        object-fit: cover;
+                        border-radius: 20px;
+                    }
+                }
+
+                >div {
+
+                    >i {
+                        font-size: 70px;
+                        padding: 15px;
+                        border-radius: 10px;
+                        background-color: #788bff;
+                    }
+
+                    >h2 {
+                        font-size: 10vw;
+                        line-height: 92%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        >footer {
+            background-color: #00343e;
+        }
+    }
+}
+
+/* Extra Small devices (small phones, up to 600px) */
+@media only screen and (max-width: 600px) {
+    main>.row>.head>.row>.title>.row>.title-text>h1 {
+        font-size: 40px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    main>.row>.head {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    main>.row>.head>.row>.title>.row>.title-text>h1 {
+        font-size: 50px;
+    }
+
+    main>.row>#section1>.row>div h3 {
+        font-size: 55px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    main>.row>.head {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    main>.row>.head>.row>.title>.row>.title-text>h1 {
+        font-size: 70px;
+    }
+
+    main>.row>#section2,
+    main>.row>footer {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    main>.row>#section2>.row>div>h2 {
+        font-size: 7vw;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main>.row>.head {
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+
+    main>.row>.head>.row>.title>.row>.title-text>h1 {
+        font-size: 75px;
+    }
+
+    main>.row>#section1>.row>div h3 {
+        font-size: 65px;
+    }
+
+    main>.row>#section2>.row>div>h2 {
+        font-size: 5vw;
+    }
+
+    main>.row>#section2,
+    main>.row>footer {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    main>.row>#section2>.row {
+        border: none;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    main>.row>.head>.row>.title>.row>.title-text>h1 {
+        font-size: 90px;
+    }
+
+    main>.row>#section1>.row>div h3 {
+        font-size: 70px;
+    }
+
+    main>.row>#section2,
+    main>.row>footer {
+        padding-left: 18vw;
+        padding-right: 18vw;
+    }
+}
+
+/* Two extra large devices (large laptops and desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) {
+    main>.row>.head>.row>.title>.row>.title-text>h1 {
+        font-size: 100px;
+    }
+
+    main>.row>#section1>.row>div h3 {
+        font-size: 100px;
+    }
+
+    main>.row>#section2,
+    main>.row>footer {
+        padding-left: 24vw;
+        padding-right: 24vw;
+    }
+}
+
+/* Three extra large devices (large laptops and desktops, 1920 and up) */
+@media only screen and (min-width: 1920px) {
+    main {
+        max-width: 1920px !important;
+        background-color: pink;
+    }
+}
