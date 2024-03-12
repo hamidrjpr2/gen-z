@@ -1,6 +1,6 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/hamidrjpr2/gen-z?style=flat&logo=star) ![GitHub language count](https://img.shields.io/github/languages/count/hamidrjpr2/gen-z?color=%23c1121f) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/hamidrjpr2/gen-z)
 
-# Gen-Z
+# Gen-Z `Responsive`
 
 <h4 align="center">
   <span>Project Live Demo -> </span>
