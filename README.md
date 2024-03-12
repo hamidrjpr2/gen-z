@@ -19,13 +19,14 @@
 <br>
 
 ## 📃Description
-  3D-Room using only Css. in this project all the 3d work has been done by transform property and not a single javascript code has been used.
+  A responsive page about Gen-Z with a static slider. The menu bar is fixed at the top of the page and opens upon clicking.
+  
 <br>
 
 ## 📊Status
 ### Creator : HamidReza Rajabpour
-#### ⚙️ Technology used : HTML, Css, Scss
-#### 〽️ style used : `Transform`, `3d-transforms` , `flex` , `animation`
+#### ⚙️ Technology used : HTML, Css, Scss, JS
+#### 〽️ style used : `Transform`, `3d-transforms` , `flex` , `animation` `bootstrap` `offset-path`
 <br>
 
 ## 🌐Social Media
